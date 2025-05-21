@@ -10,9 +10,11 @@
 #SBATCH --error=gr00t_finetune_%j.err         ## stderr log
 
 module purge
-module load mamba                            ## load Conda/Mamba
+#module load python-miniconda3/4.12.0         ## load Conda/Mamba
+module load python-miniconda3
 eval "$(conda shell.bash hook)"              ## enable `conda activate`
-conda activate gr00t                         ## your env name
+# conda activate gr00t                         ## your env name
+source activate /projects/p32775/pythonenvs/gr00t
 
 cd ~/Documents/Github/Isaac-GR00T            ## your project path
 
@@ -24,4 +26,3 @@ python scripts/gr00t_finetune.py \
    --data-config so100 \
    --video-backend torchvision_av \
    --report-to wandb
-
