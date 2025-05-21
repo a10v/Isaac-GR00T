@@ -1,6 +1,6 @@
 # 
 demo_data/
-
+datasets/
 # C extensions
 *.so
 
